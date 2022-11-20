@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1>Spelersoverzicht</h1>
+        <a class="btn btn-primary my-2" routerLink="new">Maak nieuwe gebruiker</a>
+    </div>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <th>Bondsnummer</th>
+            <th>Naam</th>
+            <th>Emailadres</th>
+            <th>Geboortedatum</th>
+            <th>Speelsterkte</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.emailaddress }}</td>
+                <td>{{ user.birthday.toLocaleDateString() }}</td>
+                <td>{{ user.rating }}</td>
+                <td class="text-end">
+                    <a routerLink="{{user.id}}" class="btn btn-primary mx-2">Details</a>
+                    <a routerLink="{{user.id}}/edit" class="btn btn-warning mx-2">Pas aan</a>
+                    <a (click)="deleteUser(user.id)" class=" btn btn-danger mx-2">Verwijder</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

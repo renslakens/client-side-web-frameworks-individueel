@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1>Spelersdetails</h1>
+        <a class="btn btn-primary my-2" routerLink="../">Terug naar overzicht</a>
+    </div>
+    <hr>
+    <div class="w-25">
+        <div class="d-flex justify-content-between">
+            <div>
+                <p>Naam:</p>
+                <p>Bondsnummer:</p>
+                <p>Emailadres:</p>
+                <p>Geboortedatum:</p>
+                <p>Speelsterkte:</p>
+            </div>
+            <div>
+                <p>{{user!.name}}</p>
+                <p>{{user!.id}}</p>
+                <p>{{user!.emailaddress}}</p>
+                <p>{{user!.birthday.toLocaleDateString()}}</p>
+                <p>{{user!.rating}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1 *ngIf="!isEdit">Registreer nieuwe speler</h1>
+        <h1 *ngIf="isEdit">Pas spelersdetails aan</h1>
+        <a *ngIf="isEdit" class="btn btn-primary my-2" routerLink="../../">Terug naar overzicht</a>
+        <a *ngIf="!isEdit" class="btn btn-primary my-2" routerLink="../">Terug naar overzicht</a>
+    </div>
+    <hr>
+    <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
+        <input *ngIf="isEdit" type="hidden" id="id" name="id" [(ngModel)]="user!.id">
+        <div class="form-group my-3">
+            <label for="name">Naam</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Vul hier je naam in" #userName="ngModel" [(ngModel)]="user!.name" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="emailaddress">Emailadres</label>
+            <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Vul hier je email in" [(ngModel)]="user!.emailaddress" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Vul hier je geboortedatum in" (ngModel)="user!.birthday" [ngModel]="user!.birthday | date: 'MM/dd/yyyy'">
+        </div>
+        <div class="form-group my-3">
+            <label for="rating">Speelsterkte</label>
+            <input type="text" class="form-control" id="rating" name="rating" placeholder="Vul hier je rating in" [(ngModel)]="user!.rating" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Verzend</button>
+    </form>
+</div>

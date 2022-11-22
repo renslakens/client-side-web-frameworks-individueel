@@ -26,5 +26,5 @@ jobs:
         server: klaslokaalmaker.nl
         username: u54252p51531
         password: ${{ secrets.FTP_PASS }}
-        protocol: ftps-legacy
+        protocol: ftp
         port: 21

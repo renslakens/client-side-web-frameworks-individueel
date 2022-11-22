@@ -15,10 +15,10 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Install Dependencies
-      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-      run: |
-        npm ci
+    # - name: Install Dependencies
+    #   if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+    #   run: |
+    #     npm ci
       
     - name: 🔨 Build Project
       run: |

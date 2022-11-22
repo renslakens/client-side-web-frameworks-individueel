@@ -4,7 +4,8 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    environment: FTP
+    environment:
+      name: FTP
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2

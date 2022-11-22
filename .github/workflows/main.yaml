@@ -13,6 +13,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: ftp.klaslokaalmaker.nl
+        server: klaslokaalmaker.nl
+        port: 21
         username: u54252p51531
         password: ${{ secrets.FTP_PASS }}

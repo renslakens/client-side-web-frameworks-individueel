@@ -28,7 +28,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
-        server: web0119.zxcs.nl
+        server: web0119.zxcs.nl/domains/klaslokaalmaker.nl/public_html
         username: u54252p51531
         password: ${{ secrets.FTP_PASS }}
         protocol: ftp

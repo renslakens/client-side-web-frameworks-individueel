@@ -1,88 +1,92 @@
 {
-    "name": "tennisclub",
-    "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "projectType": "application",
-    "sourceRoot": "apps/tennisclub/src",
-    "prefix": "clientside-web-frameworks-individueel",
-    "targets": {
-        "build": {
-            "executor": "@angular-devkit/build-angular:browser",
-            "outputs": ["{options.outputPath}"],
-            "options": {
-                "outputPath": "dist/apps/tennisclub",
-                "index": "apps/tennisclub/src/index.html",
-                "main": "apps/tennisclub/src/main.ts",
-                "polyfills": ["zone.js"],
-                "tsConfig": "apps/tennisclub/tsconfig.app.json",
-                "assets": [
-                    "apps/tennisclub/src/favicon.ico",
-                    "apps/tennisclub/src/assets",
-                    "apps/tennisclub/src/_redirects"
-                ],
-                "styles": ["apps/tennisclub/src/styles.css"],
-                "scripts": []
+  "name": "tennisclub",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/tennisclub/src",
+  "prefix": "clientside-web-frameworks-individueel",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/tennisclub",
+        "index": "apps/tennisclub/src/index.html",
+        "main": "apps/tennisclub/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/tennisclub/tsconfig.app.json",
+        "assets": [
+          "apps/tennisclub/src/favicon.ico",
+          "apps/tennisclub/src/assets",
+          "apps/tennisclub/src/_redirects"
+        ],
+        "styles": ["apps/tennisclub/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
             },
-            "configurations": {
-                "production": {
-                    "budgets": [{
-                            "type": "initial",
-                            "maximumWarning": "500kb",
-                            "maximumError": "1mb"
-                        },
-                        {
-                            "type": "anyComponentStyle",
-                            "maximumWarning": "2kb",
-                            "maximumError": "4kb"
-                        }
-                    ],
-                    "outputHashing": "all"
-                },
-                "development": {
-                    "buildOptimizer": false,
-                    "optimization": false,
-                    "vendorChunk": true,
-                    "extractLicenses": false,
-                    "sourceMap": true,
-                    "namedChunks": true
-                }
-            },
-            "defaultConfiguration": "production"
-        },
-        "serve": {
-            "executor": "@angular-devkit/build-angular:dev-server",
-            "configurations": {
-                "production": {
-                    "browserTarget": "tennisclub:build:production"
-                },
-                "development": {
-                    "browserTarget": "tennisclub:build:development"
-                }
-            },
-            "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-            "executor": "@angular-devkit/build-angular:extract-i18n",
-            "options": {
-                "browserTarget": "tennisclub:build"
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
             }
+          ],
+          "outputHashing": "all"
         },
-        "lint": {
-            "executor": "@nrwl/linter:eslint",
-            "options": {
-                "lintFilePatterns": [
-                    "apps/tennisclub/**/*.ts",
-                    "apps/tennisclub/**/*.html"
-                ]
-            }
-        },
-        "test": {
-            "executor": "@nrwl/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-            "options": {
-                "jestConfig": "apps/tennisclub/jest.config.ts",
-                "passWithNoTests": true
-            }
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
         }
+      },
+      "defaultConfiguration": "production"
     },
-    "tags": []
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "tennisclub:build:production"
+        },
+        "development": {
+          "browserTarget": "tennisclub:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/tennisclub/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "tennisclub:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/tennisclub/**/*.ts",
+          "apps/tennisclub/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/tennisclub/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
 }

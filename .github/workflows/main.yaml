@@ -34,6 +34,7 @@ jobs:
         server: web0119.zxcs.nl
         username: u54252p51531
         password: ${{ secrets.FTP_PASS }}
+        local-dir: ./dist/apps/tennisclub/
         server-dir: domains/klaslokaalmaker.nl/public_html/
         protocol: ftps
         port: 21

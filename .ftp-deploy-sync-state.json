@@ -1,0 +1,69 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1669283869000,
+    "data": [
+        {
+            "type": "file",
+            "name": "3rdpartylicenses.txt",
+            "size": 12967,
+            "hash": "657fce80f9a22f19a0d6f1f5f0ffcc025ae7929afcfcf9af979f312c1019a5e2"
+        },
+        {
+            "type": "file",
+            "name": "_redirects",
+            "size": 18,
+            "hash": "bd00766d6edbe8742fc1546343749db9adf898e447b0a109350182e41b9c4534"
+        },
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "file",
+            "name": "favicon.ico",
+            "size": 15086,
+            "hash": "f8410ea5598b43087f77e64a6b8732f6a7ae6b0a09c94497b383e1e92df95c9c"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 1055,
+            "hash": "6ced75f81328d25b109ba898ac05ebc97f577dcabf2840cceacd30b0699c12d4"
+        },
+        {
+            "type": "file",
+            "name": "main.a202a7f08c0c2e1b.js",
+            "size": 248672,
+            "hash": "ad2fdd5fc3a5634cee45bb7eea1757deb4ceb3fc60a57d675a0be563272b5e06"
+        },
+        {
+            "type": "file",
+            "name": "polyfills.772c7d983d54cf7d.js",
+            "size": 33841,
+            "hash": "9115765fd687998a07fb8ee786a00996b2ee6565dc0adec212331fd3a933c7c9"
+        },
+        {
+            "type": "file",
+            "name": "runtime.dd833da8474e3090.js",
+            "size": 898,
+            "hash": "059dab4128f9881f9a9511c04827da1d2e124f0852298b290414712f05efeeaa"
+        },
+        {
+            "type": "file",
+            "name": "styles.ef46db3751d8e999.css",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "folder",
+            "name": "assets/img"
+        },
+        {
+            "type": "file",
+            "name": "assets/img/tennisclub.drawio.png",
+            "size": 31989,
+            "hash": "02037c6bfbad21a2f9756d0713d0de892bd0b717fce46d7d82e2c9c9093768d7"
+        }
+    ]
+}

@@ -1,40 +1,35 @@
-on:
-  push:
-    branches:
-      - main
-name: 🚀 Deploy website
-jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    environment:
-      name: FTP
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+# on:
+#   push:
+#     branches:
+#       - main
+# name: 🚀 Deploy website
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: FTP
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v2
 
-    - name: Use Node.js 14
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+#     - name: Use Node.js 14
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '14'
 
-    # - name: Install Dependencies
-    #   if: steps.cache-nodemodules.outputs.cache-hit != 'true'
-    #   run: |
-    #     npm ci
-      
-    - name: 🔨 Build Project
-      run: |
-        npm install
-        npm run build
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: web0119.zxcs.nl
-        username: u54252p51531
-        password: ${{ secrets.FTP_PASS }}
-        local-dir: ./dist/apps/tennisclub/
-        server-dir: domains/klaslokaalmaker.nl/public_html/
-        protocol: ftps
-        port: 21
+#     - name: 🔨 Build Project
+#       run: |
+#         npm install
+#         npm run build
+
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@4.3.2
+#       with:
+#         server: web0119.zxcs.nl
+#         username: u54252p51531
+#         password: ${{ secrets.FTP_PASS }}
+#         local-dir: ./dist/apps/tennisclub/
+#         server-dir: domains/klaslokaalmaker.nl/public_html/
+#         protocol: ftps
+#         port: 21

@@ -9,6 +9,9 @@ import { UserEditComponent } from './pages/user/user-edit/user-edit.component';
 import { UserDetailComponent } from './pages/user/user-detail/user-detail.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './pages/about/about.component';
+import { CompetitionOverviewComponent } from './pages/competition/competition-overview/competition-overview.component';
+import { CompetitionEditComponent } from './pages/competition/competition-edit/competition-edit.component';
+import { CompetitionDetailComponent } from './pages/competition/competition-detail/competition-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,12 @@ import { AboutComponent } from './pages/about/about.component';
     UserEditComponent,
     UserDetailComponent,
     AboutComponent,
+    CompetitionOverviewComponent,
+    CompetitionEditComponent,
+    CompetitionDetailComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

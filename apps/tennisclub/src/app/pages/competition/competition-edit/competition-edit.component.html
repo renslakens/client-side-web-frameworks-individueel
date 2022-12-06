@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1 *ngIf="!isEdit">Registreer nieuwe competitie</h1>
+        <h1 *ngIf="isEdit">Pas competitiedetails aan</h1>
+        <a *ngIf="isEdit" class="btn btn-primary my-2" routerLink="../../">Terug naar overzicht</a>
+        <a *ngIf="!isEdit" class="btn btn-primary my-2" routerLink="../">Terug naar overzicht</a>
+    </div>
+    <hr>
+    <form #competitionForm="ngForm" (ngSubmit)="competitionForm.form.valid && onSubmit(competitionForm)">
+        <input *ngIf="isEdit" type="hidden" id="name" name="name" [(ngModel)]="competition!.name">
+        <div class="form-group my-3">
+            <label for="name">Naam</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Vul de naam in" #competitionName="ngModel" [(ngModel)]="competition!.name" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="year">Jaar</label>
+            <input type="number" min="2022" max="2099" step="1" class="form-control" id="year" name="year" [(ngModel)]="competition!.year" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="birthday">Periode</label>
+            <select name="period" class="form-control" id="period" [(ngModel)]="competition!.period">
+                <option value="voorjaar" selected>Voorjaar
+                <option value="najaar">Najaar
+            </select>
+        </div>
+        <div class="form-group my-3">
+            <label for="class">Klasse</label>
+            <input type="number" class="form-control" id="class" name="class" [(ngModel)]="competition!.class" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="amountofplayers">Aantal spelers</label>
+            <input type="number" min="0" max="100" step="1" class="form-control" id="amountofplayers" name="amountofplayers" [(ngModel)]="competition!.amountofplayers" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Verzend</button>
+    </form>
+</div>

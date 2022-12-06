@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1>Competitieoverzicht</h1>
+        <a class="btn btn-primary my-2" routerLink="new">Maak nieuwe competitie</a>
+    </div>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <th>Naam</th>
+            <th>Jaar</th>
+            <th>Periode</th>
+            <th>Klasse</th>
+            <th>Aantal spelers</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let competition of competitions">
+                <td>{{ competition.name }}</td>
+                <td>{{ competition.year }}</td>
+                <td>{{ competition.period }}</td>
+                <td>{{ competition.class }}</td>
+                <td>{{ competition.amountofplayers }}</td>
+                <td class="text-end">
+                    <a routerLink="{{competition.name}}" class="btn btn-primary mx-2">Details</a>
+                    <a routerLink="{{competition.name}}/edit" class="btn btn-warning mx-2">Pas aan</a>
+                    <a (click)="deleteCompetition(competition.name)" class=" btn btn-danger mx-2">Verwijder</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

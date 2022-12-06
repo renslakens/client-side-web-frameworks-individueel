@@ -4,7 +4,7 @@ import { User } from '../../../shared/models/user.model';
 import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({
-  selector: 'app-user-detail',
+  selector: 'clientside-web-frameworks-individueel-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
 })

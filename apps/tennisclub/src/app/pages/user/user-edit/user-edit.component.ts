@@ -5,7 +5,7 @@ import { User } from '../../../shared/models/user.model';
 import { UserService } from '../../../shared/services/user/user.service';
 
 @Component({
-  selector: 'app-user-edit',
+  selector: 'clientside-web-frameworks-individueel-user-edit',
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.css']
 })

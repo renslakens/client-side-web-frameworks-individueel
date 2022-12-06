@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-3">
+        <h1>Competitiedetails</h1>
+        <a class="btn btn-primary my-2" routerLink="../">Terug naar overzicht</a>
+    </div>
+    <hr>
+    <div class="w-25">
+        <div class="d-flex justify-content-between">
+            <div>
+                <p>Naam:</p>
+                <p>Jaar:</p>
+                <p>Periode:</p>
+                <p>Klasse:</p>
+                <p>Aantal spelers:</p>
+            </div>
+            <div>
+                <p>{{competition!.name}}</p>
+                <p>{{competition!.year}}</p>
+                <p>{{competition!.period}}</p>
+                <p>{{competition!.class}}</p>
+                <p>{{competition!.amountofplayers}}</p>
+            </div>
+        </div>
+    </div>
+</div>

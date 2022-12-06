@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-nav',
+  selector: 'clientside-web-frameworks-individueel-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })

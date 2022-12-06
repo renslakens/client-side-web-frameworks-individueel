@@ -22,8 +22,8 @@ describe('AuthController', () => {
       }],
     }).compile();
 
-   authController = app.get<AuthController>(AuthController);
-   authService = app.get<AuthService>(AuthService);
+    authController = app.get<AuthController>(AuthController);
+    authService = app.get<AuthService>(AuthService);
   });
 
   beforeEach(() => {

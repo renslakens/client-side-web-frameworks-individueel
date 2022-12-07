@@ -14,13 +14,24 @@ export class AuthService {
     constructor(
         @InjectModel(Identity.name) private identityModel: Model<IdentityDocument>,
         @InjectModel(User.name) private userModel: Model<UserDocument>
-    ) {}
+    ) { }
 
     async createUser(name: string, emailAddress: string): Promise<string> {
-        const user = new this.userModel({name, emailAddress});
+        const user = new this.userModel({ name, emailAddress });
         await user.save();
         return user.id;
-      }
+    }
+
+    async deleteUser(emailAddress: string): Promise<void> {
+        console.log('identity remove uitgevoerd');
+        console.log(emailAddress);
+        
+        try {
+            await this.identityModel.deleteOne({"emailAddress": emailAddress});
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     async verifyToken(token: string): Promise<string | JwtPayload> {
         return new Promise((resolve, reject) => {
@@ -34,20 +45,20 @@ export class AuthService {
     async registerUser(username: string, password: string, emailAddress: string) {
         const generatedHash = await hash(password, parseInt(process.env.SALT_ROUNDS, 10));
 
-        const identity = new this.identityModel({username, hash: generatedHash, emailAddress});
+        const identity = new this.identityModel({ username, hash: generatedHash, emailAddress });
 
         await identity.save();
     }
 
     async generateToken(username: string, password: string): Promise<string> {
-        const identity = await this.identityModel.findOne({username});
+        const identity = await this.identityModel.findOne({ username });
 
         if (!identity || !(await compare(password, identity.hash))) throw new Error("user not authorized");
 
-        const user = await this.userModel.findOne({name: username});
+        const user = await this.userModel.findOne({ name: username });
 
         return new Promise((resolve, reject) => {
-            sign({username, id: user.id}, process.env.JWT_SECRET, (err: Error, token: string) => {
+            sign({ username, id: user.id }, process.env.JWT_SECRET, (err: Error, token: string) => {
                 if (err) reject(err);
                 else resolve(token);
             });

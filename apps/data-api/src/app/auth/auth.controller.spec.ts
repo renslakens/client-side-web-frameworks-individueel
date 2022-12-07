@@ -1,4 +1,4 @@
-import { Token } from '@find-a-buddy/data';
+import { Token } from '@tennisclub/data';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { AuthController } from './auth.controller';

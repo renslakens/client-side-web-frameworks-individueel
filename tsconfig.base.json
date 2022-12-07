@@ -14,7 +14,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@clientside-web-frameworks-individueel/data": ["libs/data/src/index.ts"],
+      "@clientside-web-frameworks-individueel/data/data": [
+        "libs/data/data/src/index.ts"
+      ],
+      "@clientside-web-frameworks-individueel/data/lib": [
+        "libs/data/lib/src/index.ts"
+      ],
+      "@tennisclub/data": ["libs/data/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

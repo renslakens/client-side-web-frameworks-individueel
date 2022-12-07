@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-import { Id } from '@find-a-buddy/data';
+import { Id } from '@tennisclub/data';
 
 export interface Token {
   username: Id,

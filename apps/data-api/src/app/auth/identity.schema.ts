@@ -11,14 +11,14 @@ export class Identity {
     })
     username: string;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     hash: string;
 
     @Prop({
         required: true,
         unique: true,
-      })
-      emailAddress: string;
+    })
+    emailAddress: string;
 }
 
 export const IdentitySchema = SchemaFactory.createForClass(Identity);

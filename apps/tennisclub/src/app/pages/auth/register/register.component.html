@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <h2>Registreer hier</h2>
+    </div>
+    <div class="row">
+        <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+            <label for="username" class="form-label">Gebruikersnaam:</label>
+            <input [(ngModel)]="newUser!.username" type="name" class="form-control" #username="ngModel" name="username" required minlength="1">
+            <p *ngIf="!username.valid && username.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een gebruikersnaam in.</p>
+
+            <label for="emailAddress" class="form-label">Email:</label>
+            <input [(ngModel)]="newUser!.emailAddress" type="email" class="form-control" #emailAddress="ngModel" name="emailAddress" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$">
+            <p *ngIf="!emailAddress.valid && emailAddress.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Niet valide emailadres.</p>
+
+            <label for="password" class="form-label">Wachtwoord:</label>
+            <input [(ngModel)]="newUser!.password" type="password" class="form-control" #password="ngModel" name="password" required minlength="6">
+            <p *ngIf="!password.valid && password.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een wachtwoord in met minimaal 6 karakters.</p>
+
+            <label for="birhtday" class="form-label">Geboortedatum:</label>
+            <input type="date" class="form-control" id="birthday" name="birthday" [(ngModel)]="newUser!.birthday">
+            <!--<p *ngIf="!birthday.valid && birthday.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een geboortedatum in.</p>-->
+
+            <label for="rating" class="form-label">Speelsterkte:</label>
+            <input type="number" min="1" max="9" step="1" class="form-control" id="rating" name="rating" placeholder="Vul hier je rating in" [(ngModel)]="newUser!.rating" required>
+            <!--<p *ngIf="!rating.valid && rating.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een rating in tussen de 1 en de 9.</p>-->
+
+            <label for="city" class="form-label">Stad:</label>
+            <input [(ngModel)]="newUser!.city" type="city" class="form-control" #city="ngModel" name="city" required minlength="1">
+            <p *ngIf="!city.valid && city.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een stad in.</p>
+
+            <label for="street" class="form-label">Straat:</label>
+            <input [(ngModel)]="newUser!.street" type="street" class="form-control" #street="ngModel" name="street" required minlength="1">
+            <p *ngIf="!street.valid && street.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een straat in.</p>
+
+            <label for="house_number" class="form-label">Huisnummer:</label>
+            <input [(ngModel)]="newUser!.house_number" type="text" class="form-control" #house_number="ngModel" name="house_number" required minlength="1">
+            <p *ngIf="!house_number.valid && house_number.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een huisnummer in.</p>
+
+            <label for="postal_code" class="form-label">Postcode:</label>
+            <input [(ngModel)]="newUser!.postal_code" type="postal_code" class="form-control" #postal_code="ngModel" name="postal_code" required minlength="1">
+            <p *ngIf="!postal_code.valid && postal_code.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een postcode in.</p>
+
+            <label for="country" class="form-label">Land:</label>
+            <input [(ngModel)]="newUser!.country" type="country" class="form-control" #country="ngModel" name="country" required minlength="1">
+            <p *ngIf="!country.valid && country.touched" style="color:red"><i class="fa-solid fa-circle-xmark"></i> Vul een land in.</p>
+
+            <button [disabled]="!registerForm.valid" class="btn btn-primary mt-3" type="submit">Registreer</button>
+            <p>Al een account? <a class="ms-2 mt-3" routerLink="/auth/login">Login</a></p>
+        </form>
+    </div>
+</div>

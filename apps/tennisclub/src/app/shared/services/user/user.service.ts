@@ -6,41 +6,41 @@ import { User } from '../../models/user.model';
 })
 export class UserService {
   readonly users: User[] = [
-    {
-      id: 1000,
-      name: "John Doe",
-      emailaddress: "john@doe.com",
-      birthday: new Date("29/07/1976"),
-      rating: 3
-    },
-    {
-      id: 1001,
-      name: "Jasmijn Jansen",
-      emailaddress: "jasmijn@jansen.com",
-      birthday: new Date("10/10/2004"),
-      rating: 8
-    },
-    {
-      id: 1002,
-      name: "Linda van der Velden",
-      emailaddress: "lisa@vdvelden.com",
-      birthday: new Date("05/09/2000"),
-      rating: 5
-    },
-    {
-      id: 1003,
-      name: "Pietje Puk",
-      emailaddress: "pietje@puk.com",
-      birthday: new Date("05/07/1998"),
-      rating: 6
-    },
-    {
-      id: 1004,
-      name: "Klaas Klaassen",
-      emailaddress: "klaas@klaassen.com",
-      birthday: new Date("30/12/1985"),
-      rating: 9
-    }
+    // {
+    //   id: 1000,
+    //   name: "John Doe",
+    //   emailaddress: "john@doe.com",
+    //   birthday: new Date("29/07/1976"),
+    //   rating: 3
+    // },
+    // {
+    //   id: 1001,
+    //   name: "Jasmijn Jansen",
+    //   emailaddress: "jasmijn@jansen.com",
+    //   birthday: new Date("10/10/2004"),
+    //   rating: 8
+    // },
+    // {
+    //   id: 1002,
+    //   name: "Linda van der Velden",
+    //   emailaddress: "lisa@vdvelden.com",
+    //   birthday: new Date("05/09/2000"),
+    //   rating: 5
+    // },
+    // {
+    //   id: 1003,
+    //   name: "Pietje Puk",
+    //   emailaddress: "pietje@puk.com",
+    //   birthday: new Date("05/07/1998"),
+    //   rating: 6
+    // },
+    // {
+    //   id: 1004,
+    //   name: "Klaas Klaassen",
+    //   emailaddress: "klaas@klaassen.com",
+    //   birthday: new Date("30/12/1985"),
+    //   rating: 9
+    // }
   ]
 
   constructor() {}

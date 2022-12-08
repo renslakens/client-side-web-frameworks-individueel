@@ -16,21 +16,10 @@ export class AuthService {
         @InjectModel(User.name) private userModel: Model<UserDocument>
     ) { }
 
-    async createUser(name: string, emailAddress: string): Promise<string> {
-        const user = new this.userModel({ name, emailAddress });
+    async createUser(name: string, emailAddress: string, birthday: Date, rating: number, city: string, street: string, house_number: string, postal_code: string, country: string): Promise<string> {
+        const user = new this.userModel({ name, emailAddress, birthday, rating, city, street, house_number, postal_code, country });
         await user.save();
         return user.id;
-    }
-
-    async deleteUser(emailAddress: string): Promise<void> {
-        console.log('identity remove uitgevoerd');
-        console.log(emailAddress);
-        
-        try {
-            await this.identityModel.deleteOne({"emailAddress": emailAddress});
-        } catch (error) {
-            console.log(error);
-        }
     }
 
     async verifyToken(token: string): Promise<string | JwtPayload> {
@@ -38,22 +27,24 @@ export class AuthService {
             verify(token, process.env.JWT_SECRET, (err, payload) => {
                 if (err) reject(err);
                 else resolve(payload);
-            })
-        })
+            });
+        });
     }
 
-    async registerUser(username: string, password: string, emailAddress: string) {
+    async registerUser(username: string, password: string, emailAddress: string, birthday: Date, rating: number, city: string, street: string, house_number: string, postal_code: string, country: string): Promise<void> {
         const generatedHash = await hash(password, parseInt(process.env.SALT_ROUNDS, 10));
 
         const identity = new this.identityModel({ username, hash: generatedHash, emailAddress });
 
         await identity.save();
+
+        console.log("User registered: " + username);
     }
 
     async generateToken(username: string, password: string): Promise<string> {
         const identity = await this.identityModel.findOne({ username });
 
-        if (!identity || !(await compare(password, identity.hash))) throw new Error("user not authorized");
+        if (!identity || !(await compare(password, identity.hash))) throw new Error("User is not authorized");
 
         const user = await this.userModel.findOne({ name: username });
 

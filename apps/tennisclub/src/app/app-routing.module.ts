@@ -7,6 +7,8 @@ import { UserOverviewComponent } from './pages/user/user-overview/user-overview.
 import { CompetitionOverviewComponent } from './pages/competition/competition-overview/competition-overview.component';
 import { CompetitionEditComponent } from './pages/competition/competition-edit/competition-edit.component';
 import { CompetitionDetailComponent } from './pages/competition/competition-detail/competition-detail.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 const routes: Routes = [
     { path: 'users', pathMatch: 'full', component: UserOverviewComponent },
@@ -18,6 +20,9 @@ const routes: Routes = [
     { path: 'competitions/new', pathMatch: 'full', component: CompetitionEditComponent },
     { path: 'competitions/:id', pathMatch: 'full', component: CompetitionDetailComponent },
     { path: 'competitions/:id/edit', pathMatch: 'full', component: CompetitionEditComponent },
+
+    { path: 'auth/register', pathMatch: 'full', component: RegisterComponent },
+    { path: 'auth/login', pathMatch: 'full', component: LoginComponent },
 
     { path: 'about', pathMatch: 'full', component: AboutComponent }
 ];

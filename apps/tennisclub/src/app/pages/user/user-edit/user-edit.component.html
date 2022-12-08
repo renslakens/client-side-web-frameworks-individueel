@@ -1,9 +1,7 @@
 <div class="container">
     <div class="d-flex justify-content-between mt-3">
-        <h1 *ngIf="!isEdit">Registreer nieuwe speler</h1>
         <h1 *ngIf="isEdit">Pas spelersdetails aan</h1>
         <a *ngIf="isEdit" class="btn btn-primary my-2" routerLink="../../">Terug naar overzicht</a>
-        <a *ngIf="!isEdit" class="btn btn-primary my-2" routerLink="../">Terug naar overzicht</a>
     </div>
     <hr>
     <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">

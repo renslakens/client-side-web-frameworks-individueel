@@ -11,10 +11,9 @@ export class AuthController {
     @Post('register')
     async register(@Body() credentials: UserRegistration): Promise<ResourceId> {
         try {
-            await this.authService.registerUser(credentials.username, credentials.password, credentials.emailAddress);
-    
+            await this.authService.registerUser(credentials.username, credentials.password, credentials.emailAddress, credentials.birthday, credentials.rating, credentials.city, credentials.street, credentials.house_number, credentials.postal_code, credentials.country);
             return {
-                id: await this.authService.createUser(credentials.username, credentials.emailAddress),
+                id: await this.authService.createUser(credentials.username, credentials.emailAddress, credentials.birthday, credentials.rating, credentials.city, credentials.street, credentials.house_number, credentials.postal_code, credentials.country),
             };
         } catch (e) {
             throw new HttpException('Username invalid', HttpStatus.BAD_REQUEST);

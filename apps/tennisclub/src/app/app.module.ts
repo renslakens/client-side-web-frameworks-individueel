@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { CompetitionOverviewComponent } from './pages/competition/competition-overview/competition-overview.component';
 import { CompetitionEditComponent } from './pages/competition/competition-edit/competition-edit.component';
 import { CompetitionDetailComponent } from './pages/competition/competition-detail/competition-detail.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,11 @@ import { CompetitionDetailComponent } from './pages/competition/competition-deta
     CompetitionOverviewComponent,
     CompetitionEditComponent,
     CompetitionDetailComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
